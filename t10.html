@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    p{
+        margin-top: 20%;
+        margin-left: 50%;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <button onclick="Increase()">Increase size</button>
+    <button onclick="Decrease()">Decrease size</button>
+    <p id="text">Some Text</p>
+</body>
+
+<script>
+    var cur = document.getElementById('text');
+    var size = 20;
+    function Increase(){
+        size ++;
+        cur.style.fontSize = size + "px";
+    }
+    function Decrease(){
+        size --;
+        cur.style.fontSize = size + "px";
+    }
+</script>
+
+</html>

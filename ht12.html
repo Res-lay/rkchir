@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="__IMAGE__" 
+    style="
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            object-fit: contain">
+<canvas style="
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            position: absolute;
+            left: 0">
+</canvas>
+<script>
+    const a = document.querySelector('canvas'),
+        b = a.getContext('2d')
+
+    let c = 'a' /*a-z*/, d = ''
+    for (let i = 0; i < 25; i++)
+        c += String.fromCharCode(c.charCodeAt(0) + i)
+
+    for (let i = 0; i < 6; i++)
+        d += c[Math.floor(Math.random() * 25)]
+
+    b.font = "30px Arial"
+    b.fillText(d, 75, 75)
+</script>
+
+</body>
+</html>

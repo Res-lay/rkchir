@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #cursor {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        pointer-events: none;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 3px solid red;
+
+    }
+    body{
+        height: 1500px;
+    }
+    html {
+        cursor: none;
+    }
+
+    body::-webkit-scrollbar {
+        width: 12px;
+        /* width of the entire scrollbar */
+    }
+
+    body::-webkit-scrollbar-track {
+        background: white;
+        border:1px solid black;
+        /* color of the tracking area */
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: red;
+        /* color of the scroll thumb */
+        border-radius: 20px;
+        /* roundness of the scroll thumb */
+        border: 3px solid blue;
+        /* creates padding around scroll thumb */
+    }
+</style>
+
+<body>
+    <div id="cursor"></div>
+</body>
+<script>
+    const cursor = document.getElementById('cursor');
+
+    const mouseMove = function (e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+
+    document.addEventListener('mousemove', mouseMove);
+</script>
+
+</html>

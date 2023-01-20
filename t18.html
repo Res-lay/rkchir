@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #image{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transition: .5s;
+        margin-top: 10%;
+        margin-left: 40%;
+    }
+</style>
+
+<body>
+    <img src="/t16/HD wallpaper_ clear glass airplane window showing sunset with cloudy sky, photography.jpg" alt="image" id = 'image'>
+</body>
+<script>
+    const a = document.getElementById('image');
+        var b = Number(1); // step
+        a.addEventListener('click', () => {
+            if(b < 3){
+                b++;
+            }
+            else if(b == 3){
+                b = 1;
+                a.style.width = "200px";
+                a.style.height = "200px";
+                return;
+            }
+
+            a.style.width = a.style.height = `${b * 10 + a.clientWidth}px`
+        })
+
+</script>
+</html>

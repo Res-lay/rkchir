@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    #block{
+        display:flex;
+        flex-wrap: wrap;
+        width: 50%;
+        justify-content: space-between;
+    }
+    p{
+        flex:20%;
+    }
+</style>
+
+<body>
+    <div id="block">
+        <p id = 'item1'></p>
+        <p id = 'item2'></p>
+        <p id = 'item3'></p>
+        <p id = 'item4'></p>
+        <p id = 'item5'></p>
+        <p id = 'item6'></p>
+        <p id = 'item7'></p>
+        <p id = 'item8'></p>
+        <p id = 'item9'></p>
+        <p id = 'item10'></p>
+    </div>
+
+    <button onclick="sort()">Sort</button>
+</body>
+
+<script>
+    var temp;
+    let arr = new Array();
+    const block = document.getElementById('block');
+    for(var i = 1; i < 11; i++){
+        temp = document.getElementById(`item${i}`);
+        
+        temp.innerHTML = Math.floor(Math.random() * 99);
+        arr.push(Number(temp.innerHTML));
+    }
+    function sortfunc(a,b){
+        return a - b;
+    }
+    alert(arr);
+    function sort(){
+        arr.sort(sortfunc);
+        alert(arr);
+        for(var i = 1; i < 11; i++){
+            temp = document.getElementById(`item${i}`);
+            temp.innerHTML = arr[i - 1];
+        }
+    }
+
+</script>
+
+</html>

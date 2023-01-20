@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    <p id="date"></p>
+<script>
+    window.timerId = window.setInterval(currentTime, 500);
+    function currentTime() {
+        var date = new Date();
+
+        var datetxt = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
+
+        var clock = date.getHours() + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds());
+        document.getElementById("date").innerHTML = (datetxt + " " + clock);
+    }
+    function addZero(num) {
+        if (num <= 9) return "0" + num;
+        else return num;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #wrapper{
+        display:flex;
+        flex-direction: column;
+        width: 200px;
+        height:100px;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+        <input type="text" id = 'name'>
+        <input type="password" id="password">
+        <button id="button">Authorise</button>
+    </div>
+</body>
+
+<script>
+    const password = document.getElementById('password');
+    const name = document.getElementById('name');
+    document.getElementById('button').addEventListener('click', function(){
+        password.style.background = "transparent";
+        const l = password.value.length;
+        if(l < 16 && l > 8){
+            alert("Correct")
+        }
+        else{
+            password.style.background = "red";
+            password.value = '';
+        }
+    }) 
+
+</script>
+
+</html>

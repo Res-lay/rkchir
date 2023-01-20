@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="shortcut icon" href="/t16/icons8.gif"/> -->
+    <link rel="shortcut icon" type="image/gif" href="/t16/icons8.gif"/>
+</head>
+
+
+<style>
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("/t16/HD\ wallpaper_\ clear\ glass\ airplane\ window\ showing\ sunset\ with\ cloudy\ sky\,\ photography.jpg");
+    }
+</style>
+
+<body>
+    <script>
+        let favicon_images = [
+            'https://usefulangle.com/img/posts/45-tmp-0.gif',
+            'https://usefulangle.com/img/posts/45-tmp-1.gif',
+            'https://usefulangle.com/img/posts/45-tmp-2.gif',
+            'https://usefulangle.com/img/posts/45-tmp-3.gif',
+            'https://usefulangle.com/img/posts/45-tmp-4.gif',
+            'https://usefulangle.com/img/posts/45-tmp-5.gif',
+            'https://usefulangle.com/img/posts/45-tmp-6.gif',
+        ],
+            image_counter = 0; // To keep track of the current image
+        setInterval(function () {
+            // remove current favicon
+            if (document.querySelector("link[rel='icon']") !== null)
+                document.querySelector("link[rel='icon']").remove();
+
+            // add new favicon image
+            document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+
+            if (image_counter == favicon_images.length - 1)
+                image_counter = 0;
+            else
+                image_counter++;
+        }, 200);
+    </script>
+
+</body>
+</html>

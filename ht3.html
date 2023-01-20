@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ползунок</title>
+    </head>
+
+    <style>
+        #pic{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    
+    <body>
+        <p>Размер картинки: <input type="range"  value = 0 min = '100' max="300" id='size'></p>
+        <p><img src="/t16/HD wallpaper_ clear glass airplane window showing sunset with cloudy sky, photography.jpg" alt="" id="pic"></p>
+    </body>
+    <script>
+        const img = document.getElementById('pic');
+        document.getElementById('size').addEventListener("change", function(){
+            img.style.width = this.value + "px";
+            img.style.height = this.value + "px";
+        });
+    </script>
+</html>

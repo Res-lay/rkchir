@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clock">
+        <div class="second hand"></div>
+    </div>
+    <style>
+        :root {
+            --second: 1s;
+        }
+    
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+    
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    
+        .clock {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: white;
+            border: solid 4px;
+            margin: 0 auto;
+            position: relative;
+            /* transform: rotate(180deg); */
+        }
+    
+        .hand {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - var(--width) / 2);
+            width: var(--width);
+            height: var(--height);
+            background-color: var(--color);
+            border-radius: calc(var(--width) / 2);
+            transform-origin: center 0;
+        }
+    
+        .second {
+            --width: 5px;
+            --height: 140px;
+            --color: black;
+        }
+    
+        .second.hand {
+            animation: rotate steps(60) calc(var(--second) * 60) infinite;
+        }
+    </style>
+    
+</body>
+</html>

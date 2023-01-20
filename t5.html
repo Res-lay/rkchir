@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #menu{
+        background: lightgrey;
+        width: 100px;
+        height: fit-content;
+        border:1px solid black;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        align-items: center;
+    }
+    a{
+        margin: 5px;
+        cursor: pointer;
+    }
+</style>
+
+
+
+<body>
+    <button id="open">Menu</button>
+    <div id="menu">
+        <a>Element 1</a>
+        <a>Element 2</a>
+    </div>
+</body>
+<script>
+    const button = document.getElementById('open')
+    const menu = document.getElementById('menu');
+    function OpenHide(){
+        if(menu.style.display == "none")
+        {
+            menu.style.display = "flex";
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+
+    button.addEventListener("click", ()=>{
+        OpenHide();
+    })
+</script>
+</html>
